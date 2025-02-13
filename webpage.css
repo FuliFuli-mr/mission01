@@ -1,0 +1,171 @@
+* {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+body > header {
+  padding: 16px;
+  text-align: center;
+  background-color: #553175;
+  color: white;
+}
+
+main {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+/* Left Section in Main*/
+#left {
+  flex-basis: 40%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.task-board ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-board li {
+  padding: 5px 0;
+  font-size: 1rem;
+}
+
+.task-board input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.imgph {
+  background-color: #fff;
+  width: 100%;
+  height: 250px;
+  padding: 20px;
+  border: 1px solid pink;
+  animation: fadeInScale 1s ease-out;
+}
+
+.imgph:hover {
+  background-color: pink;
+  width: 100%;
+  height: 350px;
+  padding: 20px;
+  border: 1px solid pink;
+  transition: 2s, 4s;
+  animation: fadeInScale 1s ease-out;
+}
+
+/* Right section in Main */
+#right {
+  flex-basis: 60%;
+  background-color: white;
+  padding: 20px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #111;
+  padding: 10px 20px;
+  font-size: 24px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition-delay: 1s;
+  transition: opacity 2s ease-in-out;
+}
+
+.image-container:hover .overlay-text {
+  opacity: 1; /* Shows text on hover */
+  background-color: yellow;
+}
+
+/* Styled Board */
+.styled-board {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* FOOTER */
+footer {
+  padding: 15px;
+  text-align: center;
+  background-color: #553175;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+footer a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+footer:hover {
+  background-color: #111;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 24px;
+}
+
+footer a:hover {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 24px;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* If screen is smaller than 768px, our flex-direction will be column for navbar and main section */
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .flex-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .styled-board {
+    height: 400px;
+  }
+}
